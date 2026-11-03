@@ -1,0 +1,12 @@
+.DS_Store
+node_modules/
+.env
+.env.*
+!.env.example
+*.log
+.openai/
+.codex/
+qa/
+coverage/
+__pycache__/
+*.pyc

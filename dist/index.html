@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f8f5">
+  <meta name="description" content="快速记下英文单词，用英文理解，在需要时查看中文，听发音并练习自己的句子。">
+  <title>Wordbook · 我的英文词本</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.bundle.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="./" class="brand" aria-label="Wordbook 首页"><span class="brand-icon" aria-hidden="true">w.</span><span>wordbook<span class="brand-sub">我的英文词本</span></span></a>
+    <span class="header-note"><span class="green-dot"></span> A little English, every day.</span>
+  </header>
+  <main>
+    <section class="intro">
+      <div><p class="eyebrow">YOUR EVERYDAY ENGLISH</p><h1>记下来，慢慢变成自己的表达。</h1><p class="subtitle">先用英文理解。需要一点帮助时，再看看中文。</p></div>
+      <span class="intro-mark" aria-hidden="true">Aa<span>words into everyday life</span></span>
+    </section>
+    <section class="capture" aria-label="记录新单词">
+      <form id="add-form"><label for="word-input" class="sr-only">输入英文单词</label><span class="plus" aria-hidden="true">＋</span><input id="word-input" type="text" placeholder="遇到一个新单词？记在这里…" autocomplete="off" autocapitalize="none" spellcheck="false" maxlength="80" required><button type="submit" class="primary">记下单词 <span aria-hidden="true">↵</span></button></form>
+      <p class="capture-hint">输入英文单词，按 Enter 保存并查词。<span>例如：commute、hesitant、clarify</span></p>
+    </section>
+    <p id="notice" class="notice" role="status" aria-live="polite" hidden></p>
+    <div class="workspace">
+      <aside class="notebook" aria-label="我的单词">
+        <div class="panel-heading"><h2>我的单词 <span id="word-count">0</span></h2><button id="export" class="icon-button" title="导出词本备份" aria-label="导出词本备份">↧</button></div>
+        <label class="search-box"><span aria-hidden="true">⌕</span><input id="filter" type="search" placeholder="搜索已记录的单词" aria-label="搜索已记录的单词"></label>
+        <div id="word-list" class="word-list"></div>
+        <p class="storage-note"><span class="green-dot"></span> 保存在当前浏览器<br><span>换设备不会同步，可导出备份。</span></p>
+      </aside>
+      <article id="detail" class="detail" aria-label="单词详情" aria-live="polite"></article>
+    </div>
+    <footer><span>One word at a time.</span><span>词典：<a href="https://dictionaryapi.dev/" target="_blank" rel="noreferrer">Free Dictionary API</a> / <a href="https://en.wiktionary.org/" target="_blank" rel="noreferrer">Wiktionary ↗</a><span class="footer-divider">·</span>翻译：<a href="https://mymemory.translated.net/" target="_blank" rel="noreferrer">MyMemory ↗</a></span></footer>
+  </main>
+  <div id="toast" role="status" class="toast" hidden></div>
+</body>
+</html>
